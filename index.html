@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do app</title>
+    
+</head>
+<body class="bg-gray-200 text-white font-sans">
+
+    <div class="container mx-auto p-8">
+        <h1 class="title text-center text-4xl font-bold text-blue-600 m-4">To do list</h1>
+    <form id="taskForm" class="flex gap-4">
+        <input type="text" 
+        id="taskInput" 
+        class="border border-blue-300 rounded-md p-2 flex-1 text-black" 
+        placeholder="Enter a task here..."
+        required
+        />
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add</button>
+    </form>
+    <ul id="taskList" class="space-y-2 m-4 text-black"></ul>
+    </div>
+
+    <!-- catagory UI -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        <div>
+            <h2 class="text-xl font-bold text-blue-700 mb-2">Todo</h2>
+            <ul id="todoList" class="min-h-[200px] bg-white rounded p-2 space-y-2" 
+            data-status="todo"></ul>
+        </div>
+        <div>
+            <h2 class="text-xl font-bold text-yellow-600 mb-2">Doing</h2>
+            <ul id="doingList" class="min-h-[200px] bg-white rounded p-2 space-y-2" 
+            data-status="doing"></ul>
+        </div>
+        <div>
+            <h2 class="text-xl font-bold text-green-600 mb-2">Done</h2>
+            <ul id="doneList" class="min-h-[200px] bg-white rounded p-2 space-y-2" 
+            data-status="done"></ul>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
