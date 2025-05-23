@@ -5,19 +5,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "watch": "vite build --watch",
-    "serve": "vite preview",
-    "start": "vite",
-    "predeploy": "vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^6.3.5"
   },
   "devDependencies": {
