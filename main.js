@@ -2,7 +2,6 @@ import './style.css';
 
 const form = document.getElementById("taskForm");
 const input = document.getElementById("taskInput");
-const list = document.getElementById("taskList");
 
 const todoList = document.getElementById("todoList");
 const doingList = document.getElementById("doingList");
@@ -153,5 +152,19 @@ function createTaskItem(taskText, completed, taskStatus = "todo") {
         }
 
         li.dataset.taskStatus = newTaskStatus;
+        updateTaskStyle(li, newTaskStatus);
     });
 });
+
+
+// Additional task for instant update : 
+
+function updateTaskStyle(li, taskStatus) {
+    const statusColor = {
+        todo: "border-red-500 text-red-500",
+        doing: "border-yellow-500 text-yellow-500",
+        done: "border-green-500 text-green-500"
+    };
+
+    li.className = `flex justify-between items-center p-2 border ${statusColor[taskStatus]} rounded`;
+}
